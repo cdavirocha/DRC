@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="adicao">    
+        <h1 class="titulo">Calculadora</h1>
+        <input type="number" name="campo1" id="campo1" class="caixa"> + 
+        <input type="number" name="campo2" id="campo2" class="caixa">
+        <input type="button" value="Somar" onclick="somar()" id="botao">
+        <div id="res">Resutado:</div>
+    </div>
+
+    <script>// INTERATIVIDADE, APRENDER COMO COLOCAR EM ARQUIVO SEPARADO PARA MELHOR ORGANIZAÇÃO
+        function somar(){
+            
+          var n1 = window.document.getElementById('campo1'); //ATRIBUI A VARIAVEL O VALOR INSERIDO NO CAMPO DE ID 'CAMPO1'
+          var n2 = window.document.querySelector('input#campo2');//A MESMA COISA DO COMANDO ACIMA POREM USANDO UMA VARIAÇÃO MAIS MODERNA
+          var sm = Number(n1.value) + Number(n2.value);//SOMA DAS VARIAVEIS TRANSFORMANDO O DADO RECEBIDO EM NUMERO PARA EVITAR ERROS
+            res.innerHTML = 'a soma entre o valor '+n1.value+' e o valor '+n2.value+' é '+sm//SUBSTITUIR A DIV 'RES' PELO TEXTO DESEJADO
+        }
+    </script>
+
+
+</body>
+</html>
