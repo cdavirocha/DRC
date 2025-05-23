@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Exercicio 11</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>Avaliação de Velocidade</h1>
+    Informe a velocidade para registo :<input type="number" name="vel" id="vel">
+    <input type="button" value="Verificar" onclick="analise()">
+    <div id="resp"></div>
+    <input type="button" value="Limpar" onclick="limpe()" id="blimpe">
+</body>
+<script>
+    function analise(){
+        var v = Number(window.document.querySelector('input#vel').value)
+        var resp = window.document.querySelector('div#resp')
+        var dif = v - 80
+
+        // Remove classes antigas
+        resp.classList.remove('multado', 'permitido');// Adiciona classes novas
+
+        if (v >= 80) {
+            resp.innerHTML = `Você passou ${dif} Km/h da velocidade permitida<br>`;
+            resp.innerHTML += `<strong>Multado</strong>, sua velocidade é de : <strong>${v} Km/h </strong>`;
+            resp.classList.add('multado');// Adiciona a classe 'multado'
+        } else {
+            resp.innerHTML = `Você está dentro da velocidade permitida<br>`;
+            resp.innerHTML += `<strong>Não multado</strong>, sua velocidade é de : <strong>${v} Km/h </strong>`;
+            resp.classList.add('permitido');
+        }
+    }
+
+    function limpe() {
+        var resp = window.document.querySelector('div#resp');
+        resp.innerHTML = "";
+        resp.classList.remove('multado', 'permitido');
+        document.querySelector('input#vel').value = "";
+        document.querySelector('input#vel').focus();
+    }
+</script>
+
+</html>
